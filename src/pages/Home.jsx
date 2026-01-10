@@ -28,24 +28,26 @@ function Home() {
       <Hero />
       
       <Collection
-        title="THE CLASSIC COLLECTION"
-        subtitle="Timeless Elegance Meets Modern Craftsmanship"
-        description={`ในคอลเลกชันนี้ เราเชิญคุณเข้าสู่โลกแห่งความหรูหราแบบเรียบง่ายและความมั่นใจที่สง่างาม\n\nเรานำเสนอรองเท้าคลาสสิกที่ได้รับการออกแบบใหม่ให้รู้สึกทั้งเป็นเอกลักษณ์ของ Shoegally และเป็นอมตะเหมือนเดิม`}
-        imagePlaceholder="Classic Collection"
-        buttonText="Discover the Collection"
+        title="ABOUT SHOEGALLY BKK"
+        description={`Established in 2019, Shoegally BKK is a refined footwear house from Bangkok, devoted to the art of timeless craftsmanship and contemporary elegance. Every creation begins with premium genuine cow leather, thoughtfully selected for its rich texture and enduring quality — including luxurious suede finishes that add a subtle touch of sophistication.\n\nDesigned and crafted in partnership with our dedicated ateliers, each pair embodies a perfect harmony between modern design sensibility and meticulous handcraft. Shoegally BKK represents a quiet confidence — footwear made not just to be worn, but to be experienced.`}
+        image="/images/IMG_0724.JPG"
+        noTopPadding={true}
+        noBottomPadding={true}
       />
       
-      <ProductGrid products={filteredProducts} title="Shop" />
+      <ProductGrid products={filteredProducts} title="Shop" noTopPadding={true} noBottomPadding={true} />
       
       <Collection
         title="THE STORY BEHIND SHOEGALLY"
         subtitle="We make boots for the soul, not the season."
         description={`Shoegally เป็นมากกว่าแบรนด์รองเท้าคุณภาพสูง เราเชื่อในพลังของความเป็นปัจเจกบุคคล\n\nเราเชื่อว่าการเป็นตัวของตัวเอง การแสดงออกอย่างกล้าหาญ และการซื่อสัตย์ต่อตัวเองนั้นสำคัญ และสามารถส่งผลกระทบไม่เพียงแต่คนรอบข้างเท่านั้น แต่ยังรวมถึงคนรุ่นต่อไปด้วย`}
-        imagePlaceholder="Our Story"
-        buttonText="Learn More"
+        image="/images/IMG_0722.JPG"
+        imagePosition="bottom"
+        noTopPadding={true}
+        noBottomPadding={true}
       />
       
-      <Footer />
+      <Footer noTopMargin={true} />
     </div>
   )
 }

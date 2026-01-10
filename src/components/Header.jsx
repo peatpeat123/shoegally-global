@@ -20,32 +20,11 @@ function Header({ onSearch }) {
 
   return (
     <header className="bg-white border-b border-gray-100 sticky top-0 z-50 backdrop-blur-sm bg-white/95">
-      <div className="container mx-auto px-4 md:px-6 lg:px-12">
-        <div className="flex items-center justify-between py-4 md:py-6">
-          <div className="flex items-center">
-            <Link
-              to="/"
-              onClick={handleLogoClick}
-              className="text-xl md:text-2xl font-semibold tracking-tight text-black hover:text-gray-600 transition-colors cursor-pointer"
-            >
-              SHOEGALLY
-            </Link>
-          </div>
-          
-          <nav className="hidden md:flex items-center gap-6 lg:gap-8">
-            <a href="#shop" className="text-xs md:text-sm text-black hover:text-gray-600 transition-colors tracking-wide uppercase">
-              SHOP
-            </a>
-            <Link to="/about" className="text-xs md:text-sm text-black hover:text-gray-600 transition-colors tracking-wide uppercase">
-              ABOUT
-            </Link>
-            <Link to="/campaigns" className="text-xs md:text-sm text-black hover:text-gray-600 transition-colors tracking-wide uppercase">
-              CAMPAIGNS
-            </Link>
-          </nav>
-
-          <div className="flex items-center gap-2 md:gap-4">
-            <form onSubmit={handleSubmit} className="hidden lg:block">
+      <div className="container mx-auto px-4 sm:px-6 md:px-6 lg:px-12">
+        <div className="grid grid-cols-3 items-center py-3 sm:py-4 md:py-6">
+          {/* Left: Search (desktop) / Menu button (mobile) */}
+          <div className="flex items-center justify-start">
+            <form onSubmit={handleSubmit} className="hidden md:block">
               <div className="relative">
                 <input
                   type="text"
@@ -55,7 +34,7 @@ function Header({ onSearch }) {
                     setSearchTerm(e.target.value)
                     onSearch(e.target.value)
                   }}
-                  className="w-48 px-4 py-2 text-sm border-b border-gray-300 focus:outline-none focus:border-black transition-colors bg-transparent"
+                  className="w-40 lg:w-48 px-4 py-2 text-sm border-b border-gray-300 focus:outline-none focus:border-black transition-colors bg-transparent"
                 />
                 <svg
                   className="absolute right-2 top-2.5 h-4 w-4 text-gray-400"
@@ -74,13 +53,47 @@ function Header({ onSearch }) {
             </form>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden text-black"
+              className="md:hidden text-black p-1"
+              aria-label="Menu"
             >
-              <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             </button>
           </div>
+
+          {/* Center: Logo */}
+          <div className="flex items-center justify-center">
+            <Link
+              to="/"
+              onClick={handleLogoClick}
+              className="font-balenciaga text-base sm:text-lg md:text-xl lg:text-2xl font-black tracking-[-0.02em] text-black hover:text-gray-600 transition-colors cursor-pointer whitespace-nowrap"
+              style={{
+                fontFamily: "'Work Sans', 'Helvetica Neue', 'Arial Black', sans-serif",
+                fontWeight: 900,
+                letterSpacing: '-0.03em',
+              }}
+            >
+              SHOEGALLY BKK
+            </Link>
+          </div>
+          
+          {/* Right: Navigation (desktop) / Empty (mobile) */}
+          <nav className="hidden md:flex items-center gap-4 lg:gap-6 justify-end">
+            <a href="#shop" className="text-[10px] md:text-xs lg:text-xs text-black hover:text-gray-600 transition-colors tracking-wide uppercase">
+              SHOP
+            </a>
+            <Link to="/about" className="text-[10px] md:text-xs lg:text-xs text-black hover:text-gray-600 transition-colors tracking-wide uppercase">
+              ABOUT
+            </Link>
+            <Link to="/campaigns" className="text-[10px] md:text-xs lg:text-xs text-black hover:text-gray-600 transition-colors tracking-wide uppercase">
+              CAMPAIGNS
+            </Link>
+            <Link to="/size-guide" className="text-[10px] md:text-xs lg:text-xs text-black hover:text-gray-600 transition-colors tracking-wide uppercase">
+              SIZE GUIDE
+            </Link>
+          </nav>
+          <div className="md:hidden"></div>
         </div>
         
         {/* Mobile Menu */}
@@ -90,23 +103,30 @@ function Header({ onSearch }) {
               <a 
                 href="#shop" 
                 onClick={() => setIsMenuOpen(false)}
-                className="text-sm text-black hover:text-gray-600 transition-colors tracking-wide uppercase"
+                className="text-xs text-black hover:text-gray-600 transition-colors tracking-wide uppercase"
               >
                 SHOP
               </a>
               <Link 
                 to="/about" 
                 onClick={() => setIsMenuOpen(false)}
-                className="text-sm text-black hover:text-gray-600 transition-colors tracking-wide uppercase"
+                className="text-xs text-black hover:text-gray-600 transition-colors tracking-wide uppercase"
               >
                 ABOUT
               </Link>
               <Link 
                 to="/campaigns" 
                 onClick={() => setIsMenuOpen(false)}
-                className="text-sm text-black hover:text-gray-600 transition-colors tracking-wide uppercase"
+                className="text-xs text-black hover:text-gray-600 transition-colors tracking-wide uppercase"
               >
                 CAMPAIGNS
+              </Link>
+              <Link 
+                to="/size-guide" 
+                onClick={() => setIsMenuOpen(false)}
+                className="text-xs text-black hover:text-gray-600 transition-colors tracking-wide uppercase"
+              >
+                SIZE GUIDE
               </Link>
               <form onSubmit={handleSubmit} className="mt-2">
                 <div className="relative">

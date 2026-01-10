@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'balenciaga': ['Work Sans', 'Helvetica Neue', 'Arial Black', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 }
