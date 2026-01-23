@@ -1,12 +1,17 @@
-function Collection({ title, subtitle, description, image, imagePlaceholder, buttonText = null, noTopPadding = false, noBottomPadding = false, imagePosition = "center" }) {
+function Collection({ title, subtitle, description, image, imagePlaceholder, buttonText = null, noTopPadding = false, noBottomPadding = false, imagePosition = "center", backgroundImage = null }) {
   return (
-    <section className={`${noTopPadding ? 'pt-4 sm:pt-6 md:pt-8' : 'pt-8 sm:pt-12 md:pt-16 lg:pt-20 xl:pt-32'} ${noBottomPadding ? 'pb-0' : 'pb-8 sm:pb-12 md:pb-16 lg:pb-20 xl:pb-32'} px-4 sm:px-6`}>
-      <div className="container mx-auto max-w-7xl">
+    <section className={`${noTopPadding ? 'pt-4 sm:pt-6 md:pt-8' : 'pt-8 sm:pt-12 md:pt-16 lg:pt-20 xl:pt-32'} ${noBottomPadding ? 'pb-0' : 'pb-8 sm:pb-12 md:pb-16 lg:pb-20 xl:pb-32'} px-4 sm:px-6 bg-transparent relative`} style={backgroundImage ? {
+      backgroundImage: `url(${backgroundImage})`,
+      backgroundPosition: 'bottom center',
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover'
+    } : {}}>
+      <div className="container mx-auto max-w-7xl relative z-10">
         <div className="grid md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 lg:gap-20 items-center">
           {/* Text content - order-2 on mobile, order-1 on desktop */}
           <div className="space-y-3 sm:space-y-4 md:space-y-6 order-2 md:order-1">
             <div className="space-y-2 sm:space-y-3 md:space-y-4">
-              <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-light text-black tracking-tight leading-tight">
+              <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-light text-black tracking-tight leading-tight font-rubik-glitch">
                 {title}
               </h2>
               {subtitle && (
@@ -35,12 +40,13 @@ function Collection({ title, subtitle, description, image, imagePlaceholder, but
           </div>
           
           {/* Image - order-1 on mobile, order-2 on desktop */}
-          <div className="relative aspect-square bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden order-1 md:order-2 min-h-[250px] sm:min-h-[300px] md:min-h-0">
+          <div className="relative aspect-square bg-transparent overflow-hidden order-1 md:order-2 min-h-[250px] sm:min-h-[300px] md:min-h-0">
             {image ? (
               <img
                 src={image}
                 alt={title}
                 className={`w-full h-full object-cover ${imagePosition === 'bottom' ? 'object-bottom' : imagePosition === 'top' ? 'object-top' : 'object-center'}`}
+                style={{ filter: 'contrast(1.1) brightness(1.05)' }}
                 loading="lazy"
               />
             ) : (

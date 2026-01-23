@@ -22,13 +22,13 @@ function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-transparent">
       <Header onSearch={handleSearch} />
       
       <Hero />
       
       <Collection
-        title="ABOUT SHOEGALLY BKK"
+        title="ABOUT SHOEGALLY"
         description={`Established in 2019, Shoegally BKK is a refined footwear house from Bangkok, devoted to the art of timeless craftsmanship and contemporary elegance. Every creation begins with premium genuine cow leather, thoughtfully selected for its rich texture and enduring quality — including luxurious suede finishes that add a subtle touch of sophistication.\n\nDesigned and crafted in partnership with our dedicated ateliers, each pair embodies a perfect harmony between modern design sensibility and meticulous handcraft. Shoegally BKK represents a quiet confidence — footwear made not just to be worn, but to be experienced.`}
         image="/images/IMG_0724.JPG"
         noTopPadding={true}
@@ -44,7 +44,7 @@ function Home() {
         image="/images/IMG_0722.JPG"
         imagePosition="bottom"
         noTopPadding={true}
-        noBottomPadding={true}
+        noBottomPadding={false}
       />
       
       <Footer noTopMargin={true} />

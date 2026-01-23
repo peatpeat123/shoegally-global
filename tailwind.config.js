@@ -8,6 +8,7 @@ export default {
     extend: {
       fontFamily: {
         'balenciaga': ['Work Sans', 'Helvetica Neue', 'Arial Black', 'sans-serif'],
+        'rubik-glitch': ['Rubik', 'sans-serif'],
       },
     },
   },

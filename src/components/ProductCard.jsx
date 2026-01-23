@@ -38,14 +38,14 @@ function ProductCard({ product }) {
           </div>
         )}
       </div>
-      <div className="space-y-1 md:space-y-2">
+      <div className="space-y-0">
         <h3 className="text-xs md:text-sm font-light text-black tracking-wide uppercase line-clamp-2">
           {product.name}
         </h3>
         <p className="text-[10px] md:text-xs text-gray-500 font-light uppercase tracking-wider">
           {product.brand}
         </p>
-        <div className="pt-1 md:pt-2">
+        <div className="pt-2 md:pt-3">
           <p className="text-sm md:text-base font-light text-black">
             ฿{product.price.toLocaleString()}
           </p>

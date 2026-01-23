@@ -19,7 +19,7 @@ function Header({ onSearch }) {
   }
 
   return (
-    <header className="bg-white border-b border-gray-100 sticky top-0 z-50 backdrop-blur-sm bg-white/95">
+    <header className="bg-transparent sticky top-0 z-50">
       <div className="container mx-auto px-4 sm:px-6 md:px-6 lg:px-12">
         <div className="grid grid-cols-3 items-center py-3 sm:py-4 md:py-6">
           {/* Left: Search (desktop) / Menu button (mobile) */}
@@ -74,7 +74,7 @@ function Header({ onSearch }) {
                 letterSpacing: '-0.03em',
               }}
             >
-              SHOEGALLY BKK
+              SHOEGALLY
             </Link>
           </div>
           

@@ -3,7 +3,7 @@ import Footer from '../components/Footer'
 
 function Terms() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-transparent">
       <Header onSearch={() => {}} />
       
       <main className="container mx-auto px-6 lg:px-12 py-20 md:py-32">
